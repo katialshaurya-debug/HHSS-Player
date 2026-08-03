@@ -1,57 +1,156 @@
-<div class="header">
-    <h1>HHSS Football Registration Portal</h1>
-    <p>CRS Profile</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HHSS Football Portal</title>
 
-<div class="card">
-    <img src="https://via.placeholder.com/150">
+    <style>
 
-    <h2>Shaurya Vikas Katial</h2>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-    <span class="badge">ACTIVE</span>
+        body {
+            margin: 0;
+            background: #f5f7fa;
+        }
 
-    <hr>
+        .navbar {
+            background: white;
+            padding: 18px 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
 
-    <p><b>Player ID:</b> 7400464980186</p>
-    <p><b>Club:</b> Hungry Harts Soccer School</p>
-    <p><b>Jersey Number:</b> 12</p>
-    <p><b>Position:</b> Forward</p>
-    <p><b>Height:</b> 171 cm</p>
-    <p><b>Weight:</b> 52 kg</p>
-    <p><b>Registered:</b> 26 April 2026</p>
-    <p><b>Valid Till:</b> 31 December 2027</p>
-</div>
+        .navbar h1 {
+            color: #0d47a1;
+            margin: 0;
+        }
 
-<style>
-body{
-    background:#0d1b2a;
-    font-family:Arial;
-    color:white;
-}
+        .container {
+            width: 900px;
+            margin: 40px auto;
+        }
 
-.header{
-    background:#14213d;
-    padding:20px;
-    text-align:center;
-}
+        .profile-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
 
-.card{
-    width:500px;
-    margin:30px auto;
-    background:#1b263b;
-    padding:20px;
-    border-radius:15px;
-    text-align:center;
-}
+        .top {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
 
-img{
-    width:150px;
-    border-radius:50%;
-}
+        .photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 10px;
+            background: #ddd;
+        }
 
-.badge{
-    background:green;
-    padding:8px 16px;
-    border-radius:20px;
-}
-</style>
+        .active {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+
+        .details {
+            margin-top: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .box {
+            background: #f7f9fc;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .label {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .value {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <h1>HHSS Football Registration Portal</h1>
+    </div>
+
+    <div class="container">
+
+        <div class="profile-card">
+
+            <div class="top">
+
+                <img class="photo" src="YOUR_PHOTO_LINK_HERE">
+
+                <div>
+
+                    <h2>Shaurya Vikas Katial</h2>
+
+                    <p>Hungry Harts Soccer School</p>
+
+                    <span class="active">ACTIVE</span>
+
+                </div>
+
+            </div>
+
+            <div class="details">
+
+                <div class="box">
+                    <div class="label">Player ID</div>
+                    <div class="value">7400464980186</div>
+                </div>
+
+                <div class="box">
+                    <div class="label">Jersey Number</div>
+                    <div class="value">12</div>
+                </div>
+
+                <div class="box">
+                    <div class="label">Height</div>
+                    <div class="value">171 cm</div>
+                </div>
+
+                <div class="box">
+                    <div class="label">Weight</div>
+                    <div class="value">52 kg</div>
+                </div>
+
+                <div class="box">
+                    <div class="label">Registered On</div>
+                    <div class="value">26 April 2026</div>
+                </div>
+
+                <div class="box">
+                    <div class="label">Valid Till</div>
+                    <div class="value">31 December 2027</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
