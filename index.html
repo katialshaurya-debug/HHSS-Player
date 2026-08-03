@@ -1,98 +1,236 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>HHSS Player Portal</title>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Football Player Registry</title>
 
     <style>
 
-        *{
-            box-sizing:border-box;
-            font-family:Arial,sans-serif;
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
         }
 
-        body{
-            margin:0;
-            background:#f5f7fb;
+        body {
+            margin: 0;
+            background: #f3f5fa;
         }
 
-        .header{
-            background:white;
-            padding:20px 40px;
-            box-shadow:0 2px 10px rgba(0,0,0,0.1);
+        .hero {
+
+            height: 100vh;
+
+            background-image:
+                linear-gradient(rgba(0, 0, 0, 0.55),
+                rgba(0, 0, 0, 0.55)),
+                url("https://images.unsplash.com/photo-1574629810360-7efbbe195018");
+
+            background-size: cover;
+            background-position: center;
+
         }
 
-        .header h1{
-            color:#003366;
-            margin:0;
+        .overlay {
+
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            color: white;
+            text-align: center;
+
         }
 
-        .search-box{
-            width:700px;
-            margin:30px auto;
-            background:white;
-            padding:25px;
-            border-radius:12px;
-            box-shadow:0 2px 12px rgba(0,0,0,0.1);
+        .overlay h1 {
+
+            font-size: 55px;
+            margin-bottom: 10px;
+
         }
 
-        input{
-            width:80%;
-            padding:12px;
-            border:1px solid #ccc;
-            border-radius:8px;
-            font-size:16px;
+        .overlay p {
+
+            font-size: 20px;
+            margin-bottom: 30px;
+
         }
 
-        button{
-            padding:12px 25px;
-            background:#003366;
-            color:white;
-            border:none;
-            border-radius:8px;
-            cursor:pointer;
+        .search-box {
+
+            display: flex;
+            gap: 10px;
+
         }
 
-        .profile{
-            display:none;
-            width:700px;
-            margin:20px auto;
-            background:white;
-            border-radius:12px;
-            padding:25px;
-            box-shadow:0 2px 12px rgba(0,0,0,0.1);
+        .search-box input {
+
+            width: 400px;
+            padding: 16px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+
         }
 
-        .top{
-            display:flex;
-            gap:20px;
-            align-items:center;
+        .search-box button {
+
+            padding: 16px 30px;
+            border: none;
+            border-radius: 10px;
+            background: #0055cc;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+
         }
 
-        .photo{
-            width:140px;
-            height:170px;
-            object-fit:cover;
-            border-radius:10px;
+        .profile {
+
+            display: none;
+
+            width: 850px;
+
+            margin: 40px auto;
+
+            background: white;
+
+            border-radius: 15px;
+
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+
+            overflow: hidden;
+
         }
 
-        .active{
-            background:green;
-            color:white;
-            padding:6px 12px;
-            border-radius:20px;
+        .banner {
+
+            height: 120px;
+
+            background: linear-gradient(90deg, #003366, #0055cc);
+
         }
 
-        .grid{
-            margin-top:25px;
-            display:grid;
-            grid-template-columns:1fr 1fr;
-            gap:15px;
+        .profile-content {
+
+            padding: 30px;
+
         }
 
-        .box{
-            background:#f4f6fa;
-            padding:15px;
-            border-radius:10px;
+        .top {
+
+            display: flex;
+            gap: 25px;
+            align-items: center;
+
+            margin-top: -70px;
+
+        }
+
+        .photo {
+
+            width: 150px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 12px;
+            border: 5px solid white;
+
+        }
+
+        .active {
+
+            background: green;
+            color: white;
+
+            padding: 8px 15px;
+
+            border-radius: 20px;
+
+        }
+
+        .grid {
+
+            margin-top: 30px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 15px;
+
+        }
+
+        .box {
+
+            background: #f5f7fb;
+
+            padding: 15px;
+
+            border-radius: 10px;
+
+        }
+
+        .label {
+
+            color: gray;
+            font-size: 14px;
+
+        }
+
+        .value {
+
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 5px;
+
+        }
+
+        @media(max-width:900px) {
+
+            .overlay h1 {
+
+                font-size: 35px;
+
+            }
+
+            .search-box {
+
+                flex-direction: column;
+
+            }
+
+            .search-box input {
+
+                width: 90%;
+
+            }
+
+            .profile {
+
+                width: 95%;
+
+            }
+
+            .top {
+
+                flex-direction: column;
+
+                text-align: center;
+
+            }
+
+            .grid {
+
+                grid-template-columns: 1fr;
+
+            }
+
         }
 
     </style>
@@ -101,51 +239,88 @@
 
 <body>
 
-    <div class="header">
-        <h1>HHSS Player Registration Portal</h1>
-    </div>
+    <div class="hero">
 
-    <div class="search-box">
+        <div class="overlay">
 
-        <h2>Search Player Profile</h2>
+            <h1>⚽ Football Player Registry</h1>
 
-        <input id="search" placeholder="Enter Player ID">
+            <p>Search player registration details using the player ID</p>
 
-        <button onclick="findPlayer()">Search</button>
+            <div class="search-box">
 
-    </div>
+                <input
+                    type="text"
+                    id="playerId"
+                    placeholder="Enter Player ID">
 
-    <div class="profile" id="profile">
+                <button onclick="searchPlayer()">
 
-        <div class="top">
+                    Search
 
-            <img src="profile.jpg" class="photo">
-
-            <div>
-
-                <h2>Shaurya Vikas Katial</h2>
-
-                <p>Hungry Harts Soccer School</p>
-
-                <span class="active">ACTIVE</span>
+                </button>
 
             </div>
 
         </div>
 
-        <div class="grid">
+    </div>
 
-            <div class="box"><b>Player ID:</b><br>7400464980186</div>
+    <div class="profile" id="profile">
 
-            <div class="box"><b>Jersey Number:</b><br>12</div>
+        <div class="banner"></div>
 
-            <div class="box"><b>Height:</b><br>171 cm</div>
+        <div class="profile-content">
 
-            <div class="box"><b>Weight:</b><br>52 kg</div>
+            <div class="top">
 
-            <div class="box"><b>Registered:</b><br>26 April 2026</div>
+                <img src="profile.jpg" class="photo">
 
-            <div class="box"><b>Valid Till:</b><br>31 December 2027</div>
+                <div>
+
+                    <h2>Shaurya Vikas Katial</h2>
+
+                    <p>Hungry Harts Soccer School</p>
+
+                    <span class="active">ACTIVE</span>
+
+                </div>
+
+            </div>
+
+            <div class="grid">
+
+                <div class="box">
+                    <div class="label">Player ID</div>
+                    <div class="value">7400464980186</div>
+                </div>
+
+                <div class="box">
+                    <div class="label">Jersey Number</div>
+                    <div class="value">12</div>
+                </div>
+
+                <div class="box">
+                    <div class="label">Height</div>
+                    <div class="value">171 cm</div>
+                </div>
+
+                <div class="box">
+                    <div class="label">Weight</div>
+                    <div class="value">52 kg</div>
+                </div>
+
+                <div class="box">
+                    <div class="label">Registered On</div>
+                    <div class="value">26 April 2026</div>
+                </div>
+
+                <div class="box">
+                    <div class="label">Valid Till</div>
+                    <div class="value">31 December 2027</div>
+                </div>
+
+            </div>
 
         </div>
 
@@ -153,17 +328,25 @@
 
     <script>
 
-        function findPlayer(){
+        function searchPlayer() {
 
-            let x=document.getElementById("search").value;
+            let id = document.getElementById("playerId").value;
 
-            if(x==="7400464980186"){
+            if (id === "7400464980186") {
 
-                document.getElementById("profile").style.display="block";
+                document.getElementById("profile").style.display = "block";
+
+                window.scrollTo({
+
+                    top: document.getElementById("profile").offsetTop,
+
+                    behavior: "smooth"
+
+                });
 
             }
 
-            else{
+            else {
 
                 alert("Player not found");
 
@@ -174,4 +357,5 @@
     </script>
 
 </body>
+
 </html>
